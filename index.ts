@@ -16,6 +16,18 @@ bot.setMyCommands([
     command: "/start",
     description: "welcome to the balance checker bot",
   },
+  {
+    command: "/connect_wallet",
+    description: "run /connect_wallet {walletAddressd}",
+  },
+  {
+    command: "/select_network",
+    description: "run /select_network to select network",
+  },
+  {
+    command: "/balance",
+    description: "run /balance to retrive balance",
+  },
 ]);
 
 bot.onText(/\/start/, async (msg, match) => {
