@@ -17,7 +17,7 @@ ETH_SCAN_API_END_POINT=https://api.etherscan.io/api<br/>
 /connect_wallet {walletAddress}
 </li>
 <li>
-/connect_wallet {walletAddress}
+/select_network
 </li>
 <li>
 /balance
