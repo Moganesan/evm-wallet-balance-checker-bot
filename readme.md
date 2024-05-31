@@ -1,30 +1,47 @@
-telegram bot username : @evm_balance_checker_bot
+# Wallet Balance Checker Telegram Bot
 
-Setup:
+This Telegram bot allows users to check their cryptocurrency wallet balances on different networks. Users can connect their wallets, select a network, and retrieve their balances through simple commands.
 
-npm install
-npm start
+## Features
 
-<h1>.Env</h1><br/>
-BOT_TOKEN=6759050389:AAHBnjAbqyDFToCJlUwB7sxUM-BQjO1SnCg<br/>
-BSC_API_END_POINT=https://api-testnet.bscscan.com/api<br/>
-BSC_SCAN_API_KEY=1M77Q7ZMD31EC4TWG64VKNCVIVQ85PCQBS<br/>
-ETH_SCAN_API_KEY=1M77Q7ZMD31EC4TWG64VKNCVIVQ85PCQBS<br/>
-ETH_SCAN_API_END_POINT=https://api.etherscan.io/api<br/>
+1. **Wallet Connection:**
 
-<h1>xCommands<h1/><br/>
+   - Connect your wallet using the `/connect_wallet {walletAddress}` command.
 
-<ul>
-<li>
-/start
-</li>
-<li>
-/connect_wallet {walletAddress}
-</li>
-<li>
-/select_network
-</li>
-<li>
-/balance
-</li>
-</ul>
+2. **Network Selection:**
+
+   - Select the network (ETH or BSC) using the `/select_network` command.
+
+3. **Balance Retrieval:**
+   - Retrieve your wallet balance using the `/balance` command.
+
+## Commands
+
+- **/start**
+
+  - Welcome message with instructions on how to use the bot.
+
+- **/connect_wallet {walletAddress}**
+
+  - Connect your wallet by providing the wallet address.
+
+- **/select_network**
+
+  - Select the network (ETH or BSC) for balance retrieval.
+
+- **/balance**
+  - Retrieve the balance of the connected wallet.
+
+## Prerequisites
+
+- Node.js
+- npm or yarn
+- Telegram bot token
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Moganesan/evm-wallet-balance-checker-bot.git
+   cd evm-wallet-balance-checker-bot
+   ```
