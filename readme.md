@@ -1,5 +1,10 @@
 telegram bot username : @evm_balance_checker_bot
 
+Setup:
+
+npm install
+npm start
+
 <h1>.Env</h1><br/>
 BOT_TOKEN=6759050389:AAHBnjAbqyDFToCJlUwB7sxUM-BQjO1SnCg<br/>
 BSC_API_END_POINT=https://api-testnet.bscscan.com/api<br/>
