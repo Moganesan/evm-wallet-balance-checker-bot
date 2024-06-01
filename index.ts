@@ -56,7 +56,7 @@ bot.onText(/\/balance/, async (msg, match) => {
     (user: any) => user.username == username
   );
 
-  if (!userdetails) {
+  if (!userdetails?.walletAddress) {
     bot.sendMessage(
       msg.chat.id,
       "Wallet not connected. run /connect_wallet {address} to connect."
@@ -70,7 +70,7 @@ bot.onText(/\/balance/, async (msg, match) => {
       API_END_POINT +
         "?module=account&action=balance&address=" +
         userdetails.walletAddress +
-        "&apikey" +
+        "&apikey=" +
         BSC_SCAN_API_KEY
     );
 
@@ -83,7 +83,7 @@ bot.onText(/\/balance/, async (msg, match) => {
       API_END_POINT +
         "?module=account&action=balance&address=" +
         userdetails.walletAddress +
-        "&apikey" +
+        "&apikey=" +
         ETH_SCAN_API_KEY
     );
 
@@ -99,15 +99,16 @@ bot.onText(/\/connect_wallet (.+)/, async (msg, match: any) => {
   const checkWallet = userDetails.findIndex(
     (user: any) => user.username == username
   );
-  if (checkWallet != -1) {
-    bot.sendMessage(msg.chat.id, "Wallet address updated.");
-    userDetails[checkWallet].walletAddress = walletAddress;
-    return;
-  }
   if (!isCorrect) {
     bot.sendMessage(msg.chat.id, "Invalid wallet address.");
     return;
   }
+  if (userDetails[checkWallet].walletAddress) {
+    bot.sendMessage(msg.chat.id, "Wallet address updated.");
+    userDetails[checkWallet].walletAddress = walletAddress;
+    return;
+  }
+
   userDetails.push({
     username: username,
     walletAddress: walletAddress,
